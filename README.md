@@ -2,7 +2,7 @@
 
 **Authors:** Sam Gijsen, Kerstin Ritter
 
-This repository provides pretrained models from the paper "EEG-Language Pretraining for Highly Label-Efficient Clinical Phenotyping".
+This repository provides pretrained models from the ICML 2025 paper "EEG-Language Pretraining for Highly Label-Efficient Clinical Phenotyping".
 
 **Note:** The complete code will be made available here within the next two weeks.
 
