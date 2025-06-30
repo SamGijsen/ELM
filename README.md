@@ -1,4 +1,4 @@
-# EEG-Language Pretraining for Highly Label-Efficient Clinical Phenotyping
+# [ICML25] EEG-Language Pretraining for Highly Label-Efficient Clinical Phenotyping
 
 **Authors:** Sam Gijsen, Kerstin Ritter
 
@@ -13,25 +13,18 @@ We show that our multimodal models using brain signals (EEG) and clinical report
 - for the first time enables zero-shot classification of brain signals via clinical text prompts
 
 
-
-This codebase provides implementations for:
-* Preprocessing clinical EEG data from the TUH EEG Corpus.
-* Multimodal pretraining on EEG epochs and clinical text reports.
-* Linear probing of the pretrained EEG encoders on downstream classification tasks.
-
-<br>
 <br>
 
 <div align="center">
-  <img src="assets/LP.png" alt="Results Overview" width="75%">
+  <img src="assets/LP.png" alt="Results Overview" width="80%">
   <br>
   <i>Zero-shot and linear probing for abnormality detection.</i>
 </div>
 
 <br>
 
-<div style="text-align: center;">
-  <img src="assets/retrieval.png" alt="Results Overview" width="50%">
+<div align="center">
+  <img src="assets/retrieval.png" alt="Results Overview" width="60%">
   <br>
   <i>ELMs enable clinical event retrieval based on natural language prompts.</i>
 </div>
@@ -39,6 +32,14 @@ This codebase provides implementations for:
 
 
 ## Setup
+
+This codebase provides implementations for:
+* Preprocessing clinical EEG data from the TUH EEG Corpus.
+* Multimodal pretraining on EEG epochs and clinical text reports.
+* Linear probing of the pretrained EEG encoders on downstream classification tasks.
+
+<br>
+
 
 1.  Clone the repository:
     ```bash
