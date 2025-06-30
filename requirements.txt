@@ -1,0 +1,10 @@
+numpy<2.0
+scikit-learn
+psutil
+joblib
+pyyaml
+h5py
+pandas 
+mne
+imblearn
+transformerss

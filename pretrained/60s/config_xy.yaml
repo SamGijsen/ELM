@@ -1,0 +1,146 @@
+dataset:
+  condition: both
+  data_path: /path/to/data.h5
+  name: data.h5
+  path: /path/to/data/
+  preload: false
+  sfreq: 100
+  subclr_batch_name: None
+  test_name: null
+  test_subsample: all_to_embed
+  train_subsample: clusters/pretrain_bal_allclusters
+  val_subsample: null
+grid:
+  T:
+  - 0.3
+  learning_rate:
+  - 0.06
+  random_seed:
+  - 0
+model:
+  ELM:
+    LM_freeze_layers: 12
+    LM_pretrained_url: ncbi/MedCPT-Query-Encoder
+    MIL_max_eeg_pairs: 32
+    MIL_max_text_pairs: 8
+    MIL_positive_sampling: x,y
+    custom_cache: /path/to/cache/
+    eeg_proj_size:
+    - 512
+    - 256
+    report_sample_range: 1
+    text_data_filename: reports/anon_reports.json
+    text_headings:
+    - CLINICAL HISTORY
+    - HISTORY
+    - MEDICATIONS
+    - AED
+    - DESCRIPTION OF THE RECORD
+    - DESCRIPTION
+    - EEG BACKGROUND
+    - RANDOM WAKEFULNESS AND SLEEP
+    - EVENTS
+    - EVENT
+    - EPILEPTIFORM ACTIVITY
+    - OTHER PAROXYSMAL ACTIVITY (NON-EPILEPTIFORM)
+    - CORRELATION
+    - CLINICAL CORRELATION
+    - IMPRESSION
+    - CONCLUSION
+    - SUMMARY OF FINDINGS
+    - SUMMARY
+    - DIAGNOSIS
+    - EPILEPTIFORM ACTIVITY
+    - INTERPRETATION
+    text_prefix: ''
+    text_proj_size:
+    - 1024
+    - 256
+    text_sample_mode: paragraph
+  checkpoint_path: null
+  convert_to_TF: false
+  encoder_blocks: 4
+  encoder_conv1_params:
+  - - 4
+    - 32
+    - 1
+  - - 8
+    - 32
+    - 1
+  - - 16
+    - 32
+    - 1
+  encoder_dropout_p: false
+  encoder_pool_size:
+  - 4
+  - 4
+  - 4
+  - 4
+  encoder_res_params:
+  - - 4
+    - 32
+    - 1
+  - - 8
+    - 32
+    - 1
+  - - 16
+    - 32
+    - 1
+  head_batch_norm: true
+  head_dims:
+  - 256
+  head_dropout_p: false
+  head_out_dim: 32
+  in_channels: 20
+  model_name: xy
+  n_classes: 2
+  n_time_samples: 6000
+  pretrained_path: null
+  rep_dim: 96
+  res_dropout_p: false
+  type: EEG_ResNet
+training:
+  DDP: false
+  T: 0.3
+  amp: true
+  batch_size: 30
+  debug: false
+  do_test: false
+  embed: all_to_embed
+  embed_batch_size: 2048
+  finetune_on_subset: false
+  fold: 0
+  hp_key:
+    T: 0.3
+    learning_rate: 0.06
+    random_seed: 0
+  inference_type: epochs
+  learning_rate: 0.06
+  loss_function: ELM_MIL_FrozenLM
+  m: 0.996
+  model_save_path: /path/to/save/model/
+  n_augmentations: 0
+  n_nested_cv: 1
+  n_outer_folds:
+  - 1
+  n_test_labels: 50
+  n_train: 14946
+  n_train_labels: ALL
+  n_val_labels: 50
+  ncv: 0
+  num_epochs: 50
+  num_workers: 10
+  online_sampling_T: 999
+  patience: 10
+  random_seed: 0
+  results_save_path: /path/to/save/results/
+  setting:
+  - SSL_PRE
+  spb: 8
+  subject_level_features: false
+  target:
+  - PAT
+  use_LARS: true
+  warmup_epochs: 5
+  weight_decay: 0.0001
+  world_size: 1
